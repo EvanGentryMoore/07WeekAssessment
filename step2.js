@@ -1,9 +1,11 @@
+const perf = require('execution-time')();
+
 //////////////////// One
 function addToZero(arr){
     let trueFalseArr = []
     for(let i = 0; i < arr.length; i++){
         for(let j = 0; j < arr.length; j++){
-            if(arr[i] + arr[j] === 0){
+            if(arr[i] + arr[j] === 0 && arr[i] !== 0){
                 trueFalseArr.push(true)
             } else {
                 trueFalseArr.push(false)
@@ -11,33 +13,46 @@ function addToZero(arr){
         }
     }
     if(trueFalseArr.includes(true)){
-        console.log(true)
+        return (`${arr} is ` + true)
     } else {
-        console.log(false)
+        return (`${arr} is ` + false)
     }
+    
 }
 
+let genericArr = [1, 2, 3, -2]
+
+console.log(addToZero(genericArr))
+
+
+//Time Complexity of the function addToZero is O(n^2)
+//Space Complexity of the function addToZero is O(1)
+
+
+
+
 //////////////////// Two
-addToZero([1, 2, 3, -2])
 
 
 function hasUniqueChars(word){
     let checkedLetters = ""
     let smolChars = word.toLowerCase()
-    for(let i = 0; i < smolChars.length - 1; i++){
+    for(let i = 0; i < smolChars.length; i++){
         if(checkedLetters.includes(smolChars[i]) === false){
             checkedLetters += smolChars[i]
         } else {
-            return console.log(false)
+            return console.log(`${word} is ` + false)
         }
     }
-    console.log(true)
+    console.log(`${word} is ` + true)
 }
 
 hasUniqueChars("Monday")
 hasUniqueChars("Momday")
 hasUniqueChars("Moonday")
 
+//Time Complexity of the function addToZero is O(n^2)
+//Space Complexity of the function addToZero is O(1)
 
 
 //////////////////// Three
@@ -54,8 +69,10 @@ function isPanagram(str){
 }
 
 isPanagram(`I told the witch doctor I was in love with you.`)
-isPanagram(`Go hang a salami, I'm a lasagna hog.`)
+isPanagram(`The quick brown fox jumps over the lazy dog.`)
 
+//Time Complexity of the function addToZero is O(n)
+//Space Complexity of the function addToZero is O(1)
 
 
 
@@ -76,11 +93,5 @@ function findLongestWord(arr){
 
 findLongestWord(['zoom zoom', 'obscenity', 'scandles', 'refrigerator', 'abcdefghijklmnopqrstuvwxyz'])
 
-
-
-
-//////////////////// Extra Credit
-//one: O(n)
-//two: O(n)
-//three: O(n)
-//four: O(1)
+//Time Complexity of the function addToZero is O(n)
+//Space Complexity of the function addToZero is O(1)

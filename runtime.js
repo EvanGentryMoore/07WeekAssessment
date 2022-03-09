@@ -61,14 +61,6 @@ function insertTime(arr){// Try it with second function
 }
 
 
-// console.log('Results for the extraLargeArray');
-// console.log("insert", resultsInsert.preciseWords);
-// console.log("append", resultsAppend.preciseWords);
-
-// function tableReadOut (doublerAppend, doublerInsert){
-//     this.doublerAppend = doublerAppend;
-//     this.doublerInsert = doublerInsert;
-// }
 function Times(doublerAppend, doublerInsert){
     this.doublerAppend = doublerAppend;
     this.doublerInsert = doublerInsert;
@@ -87,5 +79,5 @@ console.table(arrs)
 /*
 By the times in the table down in the terminal, we can see that while at shorter array lengths that doublerInsert seems to be faster, it doesn't take much scaling of an array's size to make it the slower function. DoublerAppend's times appear to be more linear (10n so O(n)) than those of doublerInsert's (10^n so O(n^2)), which obviously means that DoublerAppend scales better than DoublerInsert.
 
-I suspect the reason for this is the difference between .push and .unshift. They may seem to perform basically the same task, however, the subtle logistics of their execution is very important. While they both insert a value into an array, .push places that value at the end of an array, so the processor only has to process the one new position. On the other hand, .unshift places the new value at the beginning of the array, meaning that the processor now has to process the new position of every value that was in the array previously. At larger array sizes, .unshift can be very taxing on the porcessor, especially when compared to .push.
+I suspect the reason for this is the difference between .push and .unshift. They may seem to perform basically the same task, however, the subtle logistics of their execution is very important. While they both insert a value into an array, .push places that value at the end of an array, so the processor only has to process the one new position. On the other hand, .unshift places the new value at the beginning of the array, meaning that the processor now has to process the new position of every value that was in the array previously. At larger array sizes, .unshift can be very taxing on the processor, especially when compared to .push.
 */
